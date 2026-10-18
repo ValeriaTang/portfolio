@@ -1,0 +1,37 @@
+---
+const pageTitle = "スキル";
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "ドキュメントの執筆"];
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} >
+    <title>{pageTitle}</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+</style>
+  </head>
+  <body>
+    <body>
+  <h2>{pageTitle}</h2>
+
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</body>
+  </body>
+</html>
