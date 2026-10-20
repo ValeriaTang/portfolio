@@ -1,9 +1,9 @@
 ---
 const pageTitle = "スキル";
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "ドキュメントの執筆"];
 const skillColor = "crimson";
 const fontWeight = "bold";
 const textCase = "uppercase";
+import { skills } from "../data/skill.ts";
 ---
 
 <html lang="ja">
@@ -28,10 +28,15 @@ const textCase = "uppercase";
   <body>
     <body>
   <h2>{pageTitle}</h2>
-
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
+  <div class="skills-grid">
+    {skills.map((skill) => (
+      <div class="skill-card">
+        <h3>{skill.name} <span class="badge">{skill.level}</span></h3>
+        <p>{skill.skill}</p>
+        <p>{skill.description}</p>
+      </div>
+    ))}
+  </div>
 </body>
   </body>
 </html>

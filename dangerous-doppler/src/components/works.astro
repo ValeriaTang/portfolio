@@ -1,0 +1,17 @@
+---
+import { works } from '../data/work';
+---
+
+<section id="works">
+  <h2>作品</h2>
+  <div class="works-grid">
+    {works.map((work) => (
+      <div class="work-card">
+        <h3>{work.title}</h3>
+        <p>AI使用率: {work.aiRatio}</p>
+        <p>{work.description}</p>
+        <a href={work.detailUrl} class="btn">詳細を見る</a>
+      </div>
+    ))}
+  </div>
+</section>
