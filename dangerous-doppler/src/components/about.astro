@@ -1,5 +1,5 @@
 ---
-const pageTitle = "About ME";
+const pageTitle = "私について";
 const identity = {
   Name: "Valeria",
   Affiliation: ["大阪公立大学工業高等専門学校", "総合工学システム科", "知能情報コース", "2年"],
@@ -29,6 +29,11 @@ const textCase = "uppercase";
         font-weight: var(--fontWeight);
         text-transform: var(--textCase);
       }
+
+      .profile {
+        display: grid;
+        grid-template-columns: 3em 1fr;
+      }
 </style>
   </head>
   <body>
@@ -36,12 +41,18 @@ const textCase = "uppercase";
   <h1>ポートフォリオ</h1>
   <h2>{pageTitle}</h2>
 
-  <div>Name: {identity.Name}</div>
-  <div>Birth Year: {identity.birthyear}</div>
-  <div>Affiliation: OMUCT {identity.Affiliation[2]} {identity.Affiliation[3]}</div>
-  <div>Interests: {identity.interests.join(", ")}</div>
-  <div>Hobbies: {identity.hobbies.join(", ")}</div>
-  <div>私が高専の存在を知ったのは小学校低学年の時だったと思います。私は高校や大学の存在を知ると同時に高専の存在を認知していました。なぜなら私の母が大阪府立高専の出身だからです。当時は留年生のことを、同じ学年を何度も経験する人がいるという怪談話のように聞かせられていたので、正直高専のことは怖い学校だと思っていました。そんなこんなで無意識に敬遠していたので私は普通高校に通うのだろうと自分でも思っていたのですが、例えばはんだ付けや座学でしたがIoTについての中学の頃の技術の授業が思いの外、興味深くて!</div>
+  <dl class="profile">
+    <dt>名前</dt><dd>{identity.Name}</dd>
+    <dt>生年</dt><dd>{identity.birthyear}</dd>
+    <dt>所属</dt><dd>OMUCT {identity.Affiliation[2]} {identity.Affiliation[3]}</dd>
+    <dt>趣味</dt><dd>{identity.hobbies.join(", ")}</dd>
+    <dt>関心</dt><dd>{identity.interests.join(", ")}</dd>
+  </dl>
+  <div class = turning-point>
+    <p>私が高専の存在を知ったのは小学校低学年の時だったと思います。私は高校や大学の存在を知ると同時に高専の存在を認知していました。</p>
+    <p>なぜなら私の母が大阪府立高専の出身だからです。当時は留年生のことを、同じ学年を何度も経験する人がいるという怪談話のように聞かせられていたので、正直高専のことは怖い学校だと思っていました。</p>
+    <p>そんなこんなで無意識に敬遠していたので私は普通高校に通うのだろうと自分でも思っていたのですが、例えばはんだ付けや座学でしたがIoTについての中学の頃の技術の授業が思いの外、興味深くて!</p>
+  </div>
   <div>詳しくはこちら</div>
 
 </body>
